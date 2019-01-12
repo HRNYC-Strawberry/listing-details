@@ -4,11 +4,26 @@
 const mongoose = require('mongoose');
 const Listing = require('./models/ListingSchema.js');
 const faker = require('faker');
+const { performance, PerformanceObserver } = require('perf_hooks');
 
+/* for debugging */
+const util = require('util');
+const debug = util.debuglog('performance');
+
+
+/* for observing performance */
+// const obs = new PerformanceObserver((items) => {
+//   console.log(items.getEntries()[0].duration);
+//   performance.clearMarks();
+// })
+// obs.observe({ entryTypes: ['measure']});
+
+var t0 = performance.now();
+
+/* function to generate mock data */
 let dataArray = [];
-
 function generateData() {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 100000; i++) {
     let item = {};
     item.id = i;
     
@@ -206,8 +221,8 @@ for (var i = 0; i < dataArray.length; i++) {
   });
 }
 
-
-
+var t1 = performance.now();
+console.log("Data generation took " + (t1 - t0) + "milliseconds.");
 
 //drop db before seed
 

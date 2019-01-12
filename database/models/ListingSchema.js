@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const db = require('../../index.js')
 
 const listingSchema = new mongoose.Schema({
-    id: {type: Number, unique: true},
+    _id: {type: Number, unique: true},
     price: Number,
     squareFootage: Number,
     pricePerSquareFoot: Number,
