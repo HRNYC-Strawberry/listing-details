@@ -195,7 +195,7 @@ function generateData() {
   // Listing.insertMany(batch)
 }
 
-const file = fs.createWriteStream("file.csv");
+// const file = fs.createWriteStream("file.csv");
 
 // generateData();
 
