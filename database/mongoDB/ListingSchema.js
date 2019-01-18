@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const db = require('../../index.js')
+// const mongoose = require('mongoose');
+// const db = require('../../index.js')
 
 const listingSchema = new mongoose.Schema({
     _id: {type: Number, unique: true},

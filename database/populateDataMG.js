@@ -1,5 +1,4 @@
-//READ BEFORE RUNNING THIS SCRIPT:
-//THIS FUNCTION IS FOR POPULATING THE DB WITH RANDOMLY GENERATED DATA
+// This is the file used to populate mongoDB
 
 const mongoose = require("mongoose");
 const Listing = require("./models/ListingSchema.js");
@@ -20,7 +19,7 @@ var start = 1;
 var end = 1000;
 var globalID = 1;
 
-function generateData() {
+async function generateData() {
   // let dataArray = [];
   // let storageArray = [];
   let listing;
@@ -187,18 +186,12 @@ function generateData() {
     item.realtor = faker.name.findName();
 
     batch.push(item);
-    // console.log('Im an example item >>>>
-    // console.log('typeof item', typeof item)
-    // console.log('Im the batch >>>>>>>>', batch);
   }
   insertData();
-  // Listing.insertMany(batch)
 }
-
-// const file = fs.createWriteStream("file.csv");
-
 // generateData();
 
+// TO POPULATE MONGO DB
 function insertData() {
   Listing.insertMany(batch, {ordered: false}, (err, data) => {
     if (err) {
@@ -225,15 +218,6 @@ function insertData() {
 
 console.time('DB Insert')
 insertData();
-
-// console.log("Data generation took " + (t1 - t0) + "milliseconds.");
-// const file = fs.createWriteStream("file.csv");
-
-// for (var i = 0; i < dataArray.length; i++) {
-//   console.log(dataArray[0]);
-//   var t1 = performance.now();
-// }
-
 
 // To load DB:
 // for (var i = 0; i < dataArray.length; i++) {
@@ -265,8 +249,6 @@ insertData();
 //   }
 // });
 
-
-
 // Drop db before seed
 // Listing.remove({}).exec((err, results) => {
 //   if (err) {
@@ -275,19 +257,3 @@ insertData();
 //   const myListing = new Listing;
 //   myListing.generateData();
 // });
-
-// stream.on("drain", function() {
-//   console.log("You are currently at :", iterationCount);
-//   write();
-// });
-// write();
-
-// function write() {
-//   while (iterationCount < 10000000) {
-//     if (!stream.write(callData())) {
-//       return;
-//     }
-//   }
-//   console.log((Date.now() - start) / 1000);
-//   stream.end();
-// }

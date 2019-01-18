@@ -233,4 +233,3 @@ console.log("Data generation took " + (t1 - t0) + "milliseconds.");
 //   const myListing = new Listing;
 //   myListing.generateData();
 // });
-
