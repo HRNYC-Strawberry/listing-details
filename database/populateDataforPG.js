@@ -4,7 +4,7 @@ const fs = require("fs");
 const Json2csvParser = require("json2csv").Parser;
 const { performance } = require("perf_hooks");
 const stream = fs.createWriteStream("data.csv");
-const pgdb = require('./postgresDB/createpsDB');
+// const pgdb = require('./postgresDB/createpsDB');
 
 var t0 = performance.now();
 var prev = t0;
