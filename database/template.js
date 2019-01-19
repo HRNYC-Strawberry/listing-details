@@ -1,8 +1,8 @@
 //READ BEFORE RUNNING THIS SCRIPT: 
 //THIS FUNCTION IS FOR POPULATING THE DB WITH RANDOMLY GENERATED DATA
 
-const mongoose = require('mongoose');
-const Listing = require('./models/ListingSchema.js');
+// const mongoose = require('mongoose');
+// const Listing = require('./models/ListingSchema.js');
 const faker = require('faker');
 const { performance, PerformanceObserver } = require('perf_hooks');
 

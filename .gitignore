@@ -1,3 +1,7 @@
 node_modules
 package-lock.json
 client/dist/bundle.js
+postgresData.csv
+data.csv
+*.csv
+database/data.csv
