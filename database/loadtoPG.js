@@ -12,7 +12,8 @@ const pool = new Pool({
     port: 80
 });
 
-pool.query(`COPY listings FROM '/Users/helenjsoh/Desktop/Listing-Details-Sidebar/database/data.csv' DELIMITER ',' CSV HEADER`, (err, res) => {
+// local query: COPY listings from '/Users/helenjsoh/Desktop/Listing-Details-Sidebar/database/data.csv' DELIMITER ',' CSV HEADER`
+pool.query(`COPY listings FROM '${__dirname}/data.csv' DELIMITER ',' CSV HEADER`, (err, res) => {
     if (err) {
       console.log('Error with copy query: ', err);
     } else {
@@ -21,3 +22,5 @@ pool.query(`COPY listings FROM '/Users/helenjsoh/Desktop/Listing-Details-Sidebar
       console.log("Time: " + (t1 - t0) / 1000 + "seconds");
     }
 });
+
+// psql -h remotehost -d remote_mydb -U myuser -c "\copy mytable (column1, column2)  from '/path/to/local/file.csv' with delimiter as ','"

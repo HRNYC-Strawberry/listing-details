@@ -4,7 +4,6 @@ const fs = require("fs");
 const Json2csvParser = require("json2csv").Parser;
 const { performance } = require("perf_hooks");
 const stream = fs.createWriteStream("data.csv");
-// const pgdb = require('./postgresDB/createpsDB');
 
 var t0 = performance.now();
 var prev = t0;
@@ -35,11 +34,11 @@ let globalID = 1;
   for (var i = 0; i < 1000; i++) {
     await new Promise((resolve, reject) => {
       let arr = [];
-      for (var j = 0; j < 1000; j++) {
+      for (var j = 0; j < 10000; j++) {
         let item = {};
         item._id = globalID;
 
-        if (i < 25) {
+        if (i < 25) { 
           item.price = faker.random.number({
             min: 250000,
             max: 500000
