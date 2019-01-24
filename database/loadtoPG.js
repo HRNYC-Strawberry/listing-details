@@ -9,7 +9,7 @@ const pool = new Pool({
     password: 'mysecretpassword',
     host: 'ec2-52-14-170-98.us-east-2.compute.amazonaws.com',
     database: 'postgres',
-    port: 80
+    port: 3210
 });
 
 // local query: COPY listings from '/Users/helenjsoh/Desktop/Listing-Details-Sidebar/database/data.csv' DELIMITER ',' CSV HEADER`

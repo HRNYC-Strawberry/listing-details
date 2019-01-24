@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Team-Elysium/listing-details#readme",
   "dependencies": {
+    "@newrelic/native-metrics": "^4.0.0",
+    "artillery": "^1.6.0-26",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",

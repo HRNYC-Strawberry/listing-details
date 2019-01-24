@@ -1,0 +1,14 @@
+config:
+  target: 'http://localhost:3012'
+  processor: './artilleryfunction.js'
+  phases:
+    - duration: 60
+      arrivalRate: 1
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    - function: 'createRandomEndpoint'
+    - get:
+        url: '/api/details/${listingID}'

@@ -3,6 +3,7 @@ const router = require("./routes.js");
 const bodyParser = require("body-parser");
 const path = require("path");
 const compression = require("compression");
+const newrelic = require("newrelic");
 
 const app = express();
 
