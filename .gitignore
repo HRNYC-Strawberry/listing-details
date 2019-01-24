@@ -6,3 +6,4 @@ data.csv
 *.csv
 database/data.csv
 newrelic.js
+test.yml
