@@ -5,7 +5,8 @@ This file generates random endpoints (i.e. listing ID #'s) for Artillery stress 
 'use strict';
 
 const createRandomEndpoint = (context, events, done) => {
-    let id = Math.random() * (1999999-10) + 10;
+    let id = Math.floor(Math.random() * (999999-7190) + 7190);
+    // console.log(`Random ID ${id} was created.`);
     context.vars.listingID = id;
     return done();
 };

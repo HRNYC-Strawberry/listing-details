@@ -9,9 +9,13 @@ const app = express();
 
 app.use(compression());
 app.use(bodyParser.json());
+app.use("/", express.static(path.join(__dirname + "/../client/dist")));
+// "/:id(\\d+)",
 app.use("/:id", express.static(path.join(__dirname + "/../client/dist")));
+app.use("/api/details", router);
 
-app.use("/", router);
+// test route
+app.get('/hello', (req, res) => res.send('world'))
 
 let port = 3012;
 app.listen(port, () => {

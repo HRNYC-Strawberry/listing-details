@@ -10,9 +10,14 @@ const pool = new Pool({
     host: 'ec2-52-14-170-98.us-east-2.compute.amazonaws.com',
     database: 'postgres',
     port: 3210
+    // user: "helenjsoh",
+    // database: "postgres",
+    // host: "localhost", 
+    // port: 5432
 });
 
 // local query: COPY listings from '/Users/helenjsoh/Desktop/Listing-Details-Sidebar/database/data.csv' DELIMITER ',' CSV HEADER`
+// deloyed query: COPY listings FROM '${__dirname}/data.csv' DELIMITER ',' CSV HEADER
 pool.query(`COPY listings FROM '${__dirname}/data.csv' DELIMITER ',' CSV HEADER`, (err, res) => {
     if (err) {
       console.log('Error with copy query: ', err);

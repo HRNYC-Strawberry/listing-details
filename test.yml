@@ -3,7 +3,7 @@ config:
   processor: './artilleryfunction.js'
   phases:
     - duration: 60
-      arrivalRate: 100
+      arrivalRate: 30
   defaults:
     headers:
       x-my-service-auth: '987401838271002188298567'
@@ -11,4 +11,6 @@ scenarios:
   - flow:
     - function: 'createRandomEndpoint'
     - get:
-        url: '/api/details/${listingID}'
+        url: '/api/details/{{listingID}}'
+
+# url: '/api/details/${listingID}'
