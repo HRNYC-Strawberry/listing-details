@@ -7,3 +7,9 @@ data.csv
 database/data.csv
 newrelic.js
 test.yml
+redis-cache/node_modules
+redis-cache/dump.rdb
+redis-cache/package-lock.json
+redis-cache/package.json
+/Users/helenjsoh/Desktop/Listing-Details-Sidebar/redis-cache/server.js
+newrelic_agent.log
